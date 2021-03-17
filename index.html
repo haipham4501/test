@@ -1,7 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+<title>Test JS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-    <p>đây là test</p>
-</body>    
+    <div style="padding:20px;">
+    <button type="button">Sản phẩm</button>
+    </div>
+    
+    <form>
+    <fieldset>
+    <label for="tên sp">*Tên sản phẩm</label>
+    <label style='padding-left:80px' for="seller">*Nhà bán</label><br>
+    <input type="text" id="tên sp" name="tên sp">    
+    <select id="seller" name="seller" placeholder="">
+      <option value="epco">EPCO STORE</option>
+      <option value="eco">ECO FRUIT</option>
+      <option value="gmd">TRADE WIND GMD</option>
+      <option value="vanan">VẠN AN</option><br>      
+    </select><br><br>   
+    <label for="unit">*Đơn vị tính</label>
+    <label style="padding-left:100px;padding-right:100px;" for="category">*Danh mục</label>
+    <label for="brand">*Thương hiệu</label><br>
+       <input type="text" id="unit" name="unit">
+       <input type="text" id="category" name="category">
+       <input type="text" id="brand" name="brand"><br>
+    <label for="ttnb">*Thông tin nổi bật</label><br>
+    <textarea id="ttnb" name="Thông tin nổi bật" style="width:100%;height:200px;"></textarea><br>
+    <label for="ttct">*Thông tin chi tiết</label><br>
+    <textarea id="ttct" name="Thông tin chi tiết" style="width:100%;height:200px;"></textarea><br>
+    </fieldset>
+    </form>
+    
+    <form id="thuộc tính">
+    <fieldset>
+    <button type="button" form="thuộc tính">+ Thêm thuộc tính</button>
+    </fieldset>
+    </form>
+    
+    
+    <form>
+    <fieldset>
+    <p><strong>SEO details</strong></p>
+    <label for="slug">Slug</label>
+    <input type="text" id="slug" name="slug"><br><br>
+    <label for="KP">Key Phrase:</label>
+    <input type="text" id="KP" name="KP" placeholder="Nhập Key Phrase"><br><br>
+    <label for="KP">Related key phrase:</label><br><br>
+    <button type="button">+ New Keyword</button><br><br>
+    <label for="desciption">Meta description:<label><br><br>
+    <textarea id="meta" name="meta des" style="width:100%;height:200px"></textarea><br><br>
+    <button type="button" class="lưu">Lưu</button>
+    </fieldset>
+    <form>
+    
+    <form>
+    <fieldset>
+    <input type='radio' id='Đơn Lẻ' name="Sản Phẩm Đơn Lẻ" value="Đơn Lẻ" >Sản Phẩm Đơn Lẻ</input>
+    <input type="radio" id="Nhiều biến thể" name="Nhiều biến thể" value="Nhiều biến thể">Nhiều Biến Thể</input>
+    </fieldset>
+    </form>
+    
+    <form>
+    <fieldset>
+    <label for="anh">Tải ảnh sản phẩm</label><br><br>
+    
+    <label style="padding-right:30px;" for="gross.w">Gross.W</label>
+    <label style="padding-left:50px;padding-right:50px;" for="net.w" >Net.W</label>
+    <label style="padding-left:50px;padding-right:65px;" for="length">Dài</label>
+    <label style="padding-left:50px;padding-right:50px;" for="width">Rộng</label>
+    <label style="padding-left:50px;" for="height">Cao</label><br>
+    <input style="width:13%;" type="text" id="gross.w" name="gross.w">
+    <input style="width:13%;" type="text" id="net.w" name="net.w">
+    <input style="width:13%;" type="text" id="length" name="length">
+    <input style="width:13%;" type="text" id="width" name="width">
+    <input style="width:13%;" type="text" id="height" name="height"><br>
+    <button type="button">Lưu</button>
+    <button type="button">Sửa</button>
+    <button type="button">Xóa</button>
+    </fieldset>
+    </form>
+
+<script src="script.js"></script>
+
+</body>
 </html>
