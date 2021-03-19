@@ -9,49 +9,24 @@
     <input type="text" id="myText">
 </div>
 
-<button onclick="a()">1</button>
-<button onclick="b()">2</button>
-<button onclick="c()">3</button>
-<button onclick="d()">4</button>
-<button onclick="e()">5</button>
-<button onclick="f()">6</button>
-<button onclick="g()">7</button>
-<button onclick="h()">8</button>
-<button onclick="i()">9</button>
-<button onclick="j()">0</button>
-
-
+<div id="numip">
+    <button onclick="fnc('1')" value="1" >1</button>
+    <button onclick="fnc('2')" value="2" >2</button>
+    <button onclick="fnc('3')" value="3" >3</button>
+    <button onclick="fnc('4')" value="4" >4</button>
+    <button onclick="fnc('5')" value="5" >5</button>
+    <button onclick="fnc('6')" value="6" >6</button>
+    <button onclick="fnc('7')" value="7" >7</button>
+    <button onclick="fnc('8')" value="8" >8</button>
+    <button onclick="fnc('9')" value="9" >9</button>
+    <button onclick="fnc('0')" value="0" >0</button>
+    <button onclick="fnc('.')" value="." >.</button>
+   
+</div>
 
 <script>
-function a() {
-    document.getElementById("myText").value += 1;
-}
-function b() {
-    document.getElementById("myText").value += 2;
-}
-function c() {
-    document.getElementById("myText").value += 3;
-}
-function d() {
-    document.getElementById("myText").value += 4;
-}
-function e() {
-    document.getElementById("myText").value += 5;
-}
-function f() {
-    document.getElementById("myText").value += 6;
-}
-function g() {
-    document.getElementById("myText").value += 7;
-}
-function h() {
-    document.getElementById("myText").value += 8;
-}
-function i() {
-    document.getElementById("myText").value += 9;
-}
-function j() {
-    document.getElementById("myText").value += 0;
+function fnc(v) {
+    document.getElementById("myText").value += v;
 }
 </script>
 </body>
