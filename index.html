@@ -10,17 +10,26 @@
     <input type="text" id="myText">
 </div>
 
-<div class="button">
-<button onclick="a()">1</button>
-<button onclick="b()">2</button>
-<button onclick="c()">3</button>
-<button onclick="d()">4</button>
-<button onclick="e()">5</button>
-<button onclick="f()">6</button>
-<button onclick="g()">7</button>
-<button onclick="h()">8</button>
-<button onclick="i()">9</button>
-<button onclick="j()">0</button>
+<div>
+    <button onclick="fnc('1')" value="1" >1</button>
+    <button onclick="fnc('2')" value="2" >2</button>
+    <button onclick="fnc('3')" value="3" >3</button>
+    <button onclick="fnc('4')" value="4" >4</button>
+    <button onclick="fnc('5')" value="5" >5</button>
+    <button onclick="fnc('6')" value="6" >6</button>
+    <button onclick="fnc('7')" value="7" >7</button>
+    <button onclick="fnc('8')" value="8" >8</button>
+    <button onclick="fnc('9')" value="9" >9</button>
+    <button onclick="fnc('0')" value="0" >0</button>
+    <button onclick="fnc('.')" value="." >.</button>
+    <button onclick="fnc('+')" value="+" >+</button>
+    <button onclick="fnc('-')" value="-" >-</button>
+    <button onclick="fnc('*')" value="*" >*</button>
+    <button onclick="fnc('/')" value="/" >/</button>
+</div>
+<div id="ops">
+    <button onclick="equal('=')" value="=" id="eq" >=</button>
+    <button onclick="cls()">c</button>
 </div>
 
 <script src="script.js"></script>
