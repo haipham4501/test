@@ -1,50 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
+html{
+    --bg: #e9eef4;
+    --color-text: #0e0e0e;
+    --color-border: #bcbfc2;
+    --btn-active: #bcbfc2;
+}
+
+/*bảng main*/
+.calculator{
+    display: grid;
+    grid-template-rows: 2fr 10fr;
+    padding: 5rem 0;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    background-color:  #e6e6e6;
+}
+
+.display{
+    display: grid;
+    grid-template-columns: 70px 40px;
+}
+/*màn hình*/
+#myText{
+text-align: right;
+padding: 5px;
+height: 50px;
+width: 230px;
+font-size: 2rem;
+color: var(--color-text);
+background-color: #e6e6e6;
+white-space: nowrap;
+overflow-y: hidden;
+overflow-x: auto;
+border: 1px #e6e6e6;
+}
+
+/*nút clear*/
+#clr{
+    border: none;
+    width: 100%;
+    font-size: 2rem;
+    color: var(--color-text);
+    background-color: #9a9898
+;
+    outline: none;
+    cursor: pointer;
+
+} 
+
+/*mảng nút bấm*/
+.button{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+/*mảng số*/
+.numip{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: #dcdbdb;
+    border-right: 1px;
+}
+
+.btn{
+    border: none;
+    width: 70px;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    background-color: #dcdbdb;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.btn:active {
+    background: var(--btn-active);
+    cursor: pointer;
+}
+
+.ops{
+    display: grid;
+    grid-template-columns: repeat(2, 4fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 50px;      
+}
+
+
+
+</style>
 </head>   
 <body>
 <div class="calculator">
 <div class="display">
-    <input type="text" id="myText">
+    <button onclick="cls()" id="clr">c</button><span>
+    <input type="text" id="myText" style="border: 1px solid #9a9898;"></span>
 </div>
-
-<div>
-    <button onclick="fnc('1')" value="1" >1</button>
-    <button onclick="fnc('2')" value="2" >2</button>
-    <button onclick="fnc('3')" value="3" >3</button>
-    <button onclick="fnc('4')" value="4" >4</button>
-    <button onclick="fnc('5')" value="5" >5</button>
-    <button onclick="fnc('6')" value="6" >6</button>
-    <button onclick="fnc('7')" value="7" >7</button>
-    <button onclick="fnc('8')" value="8" >8</button>
-    <button onclick="fnc('9')" value="9" >9</button>
-    <button onclick="fnc('0')" value="0" >0</button>
-    <button onclick="fnc('.')" value="." >.</button>
-    <button onclick="fnc('+')" value="+" >+</button>
-    <button onclick="fnc('-')" value="-" >-</button>
-    <button onclick="fnc('*')" value="*" >*</button>
-    <button onclick="fnc('/')" value="/" >/</button>
+<div class="button">
+<div class="numip">
+    <button class="btn" onclick="fnc('7')" value="7" >7</button>
+    <button class="btn" onclick="fnc('8')" value="8" >8</button>
+    <button class="btn" onclick="fnc('9')" value="9" >9</button>
+    <button class="btn" onclick="fnc('4')" value="4" >4</button>
+    <button class="btn" onclick="fnc('5')" value="5" >5</button>
+    <button class="btn" onclick="fnc('6')" value="6" >6</button>
+    <button class="btn" onclick="fnc('1')" value="1" >1</button>
+    <button class="btn" onclick="fnc('2')" value="2" >2</button>
+    <button class="btn" onclick="fnc('3')" value="3" >3</button>
+    <button class="btn" onclick="fnc('0')" value="0" >0</button>
+    <button class="btn" onclick="fnc('.')" value="." >.</button>
+    <button class="btn" onclick="equal('=')" value="=" id="eq" style="background-color: #1a73e0;" >=</button>
+    
 </div>
-<div id="ops">
-    <button onclick="equal('=')" value="=" id="eq" >=</button>
-    <button onclick="cls()">c</button>
-
+<div class="ops">
+    <button class="btn" onclick="fnc('+')" value="+" >+</button><br>
+    <button class="btn" onclick="fnc('-')" value="-" >-</button><br>
+    <button class="btn" onclick="fnc('*')" value="*" >*</button><br>
+    <button class="btn" onclick="fnc('/')" value="/" >/</button><br>
+</div>
 </div>
 <script>
 function fnc(v) {
     document.getElementById("myText").value += v;
+    console.log (v);
 }
 
 function equal(){
     let x = document.getElementById("myText").value
     let y = eval(x)
     document.getElementById("myText").value = y
+    console.log (y);
 }
 
 var enter = document.getElementById("myText");
 enter.addEventListener("keyup",function(result){
     if (result.keyCode === 13) {
+        result.preventDefault();
         document.getElementById("eq").click();
     }
 })
@@ -52,6 +158,12 @@ enter.addEventListener("keyup",function(result){
 function cls() {
     document.getElementById("myText").value = ""
 }
+var del = document.getElementById("myText");
+enter.addEventListener("keyup",function(blank){
+    if (blank.keyCode === 46) {
+        document.getElementById("clr").click();
+    }
+})
 </script>
 </body>
 
