@@ -1,30 +1,20 @@
-function a() {
-  document.getElementById("myText").value += 1;
+function fnc(v) {
+  document.getElementById("myText").value += v;
 }
-function b() {
-  document.getElementById("myText").value += 2;
+
+function equal(){
+  let x = document.getElementById("myText").value
+  let y = eval(x)
+  document.getElementById("myText").value = y
 }
-function c() {
-  document.getElementById("myText").value += 3;
-}
-function d() {
-  document.getElementById("myText").value += 4;
-}
-function e() {
-  document.getElementById("myText").value += 5;
-}
-function f() {
-  document.getElementById("myText").value += 6;
-}
-function g() {
-  document.getElementById("myText").value += 7;
-}
-function h() {
-  document.getElementById("myText").value += 8;
-}
-function i() {
-  document.getElementById("myText").value += 9;
-}
-function j() {
-  document.getElementById("myText").value += 0;
+
+var enter = document.getElementById("myText");
+enter.addEventListener("keyup",function(result){
+  if (result.keyCode === 13) {
+      document.getElementById("eq").click();
+  }
+})
+
+function cls() {
+  document.getElementById("myText").value = ""
 }
