@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+html{
+    --bg: #e9eef4;
+    --color-text: #0e0e0e;
+    --color-border: #bcbfc2;
+    --btn-active: #bcbfc2;
+}
+
+/*bảng main*/
+.calculator{
+    display: grid;
+    grid-template-rows: 2fr 10fr;
+    padding: 5rem 0;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    background-color:  #e6e6e6;
+}
+
+.display{
+    display: grid;
+    grid-template-columns: 70px 40px;
+}
+/*màn hình*/
+#myText{
+text-align: right;
+padding: 5px;
+height: 50px;
+width: 230px;
+font-size: 2rem;
+color: var(--color-text);
+background-color: #e6e6e6;
+white-space: nowrap;
+overflow-y: hidden;
+overflow-x: auto;
+border: 1px #e6e6e6;
+}
+
+/*nút clear*/
+#clr{
+    border: none;
+    width: 100%;
+    font-size: 2rem;
+    color: var(--color-text);
+    background-color: #9a9898
+;
+    outline: none;
+    cursor: pointer;
+
+} 
+
+/*mảng nút bấm*/
+.button{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+/*mảng số*/
+.numip{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: #dcdbdb;
+    border-right: 1px;
+}
+
+.btn{
+    border: none;
+    width: 70px;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    background-color: #dcdbdb;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.btn:active {
+    background: var(--btn-active);
+    cursor: pointer;
+}
+
+.ops{
+    display: grid;
+    grid-template-columns: repeat(2, 4fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 50px;      
+}
+
+
