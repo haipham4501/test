@@ -58,7 +58,7 @@ label input[type="checkbox"]{
 }
 .display{
     display: inline-grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto; 
 }
 
 /*screen*/
@@ -129,59 +129,12 @@ grid-template-rows: auto auto auto auto;
 background: var(--bg);
 }
 
-.expansion{
-    display: block;
-}
+.expand{
+    display: grid;
+    background: var(--bg);
+    border-right: 1px solid var(--color-border);
+    }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
 </style>
 </head>   
 <body>
@@ -200,9 +153,10 @@ input:checked + .slider:before {
         </label>
     </span>
     <span>
-        <label class="switch">
-        <input type="checkbox" onclick="openTab('b1')">
-        <span class="slider"></span>
+         <label>
+            <input type="checkbox" onclick="openTab('b1')">
+            <span class="btn"></span>
+            <i class="fas fa-expand-arrows-alt"></i>
         </label>
     </span>
 </div>
@@ -237,6 +191,7 @@ input:checked + .slider:before {
 <div id="b1" class="expand" style="display:none;">
 <button class="btn" onclick="fnc('(')" value="(" >(</button> 
 <button class="btn" onclick="fnc(')')" value=")" >)</button> 
+<button class="btn" onclick="percent('%')" value="%" id="per">%</button>
 </div>
 
 </div>
@@ -245,7 +200,7 @@ function fnc(v) {
     document.getElementById("myText").value += v;
     console.log (v);
 }
-
+/*function button*/
 function equal(){
     let x = document.getElementById("myText").value
     let y = eval(x)
@@ -257,6 +212,13 @@ function equal(){
     showHistory()*/
 }
 
+function percent(){
+    let x = document.getElementById("myText").value
+    let y = x/100
+    document.getElementById("myText").value = y
+    console.log (y);
+}
+/*key binding*/
 var enter = document.getElementById("myText");
 enter.addEventListener("keyup",function(result){
     if (result.keyCode === 13) {
@@ -276,6 +238,8 @@ enter.addEventListener("keyup",function(blank){
     }
 })
 
+
+/*other*/
 let checkbox = document.querySelector('input[name=theme]');
 checkbox.addEventListener('change', function() {
     if (this.checked) {
@@ -287,17 +251,13 @@ checkbox.addEventListener('change', function() {
 
 
 function openTab(tabName) {
-  var i, x;
-  x = document.getElementsByClassName("expand");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"
-  }
-
-  document.getElementById(tabName).style.display = "block"
+var expand = document.getElementById("b1")
+if (expand.style.display === "none") {
+    expand.style.display = "block";
+} else {
+    expand.style.display = "none";
 }
-
-
-
+}
 
 
   
