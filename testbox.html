@@ -192,6 +192,7 @@ background: var(--bg);
 <button class="btn" onclick="fnc('(')" value="(" >(</button> 
 <button class="btn" onclick="fnc(')')" value=")" >)</button> 
 <button class="btn" onclick="percent('%')" value="%" id="per">%</button>
+<button class="btn" onclick="root()" value="&#10003" id="root">&#10003</button>
 </div>
 
 </div>
@@ -218,6 +219,14 @@ function percent(){
     document.getElementById("myText").value = y
     console.log (y);
 }
+
+function root() {
+    let x = document.getElementById("myText").value
+    let y = Math.sqrt(x)
+    document.getElementById("myText").value = y
+    console.log (y);
+}
+
 /*key binding*/
 var enter = document.getElementById("myText");
 enter.addEventListener("keyup",function(result){
@@ -260,14 +269,6 @@ if (expand.style.display === "none") {
 }
 
 
-  
-/*function changeclr() {
-    var myCollection = document.getElementsByClassName("btn");
-    var i;
-    for (i=0; i < myCollection.length; i++) {
-        myCollection[i].style.background = "red";
-    }
-}*/
 /*const logHistory = document.getElementById("history")
 let history = [];
 let expressData = "";
