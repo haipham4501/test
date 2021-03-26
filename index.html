@@ -6,34 +6,63 @@
 </head>
 <body>
 
-<div class="calculator">
-    <div class="display">
-        <button onclick="cls()" id="clr">c</button><span>
-        <input type="text" id="myText" style="border: 1px solid #9a9898;"></span>
-    </div>
-    <div class="button">
-    <div class="numip">
-        <button class="btn" onclick="fnc('7')" value="7" >7</button>
-        <button class="btn" onclick="fnc('8')" value="8" >8</button>
-        <button class="btn" onclick="fnc('9')" value="9" >9</button>
-        <button class="btn" onclick="fnc('4')" value="4" >4</button>
-        <button class="btn" onclick="fnc('5')" value="5" >5</button>
-        <button class="btn" onclick="fnc('6')" value="6" >6</button>
-        <button class="btn" onclick="fnc('1')" value="1" >1</button>
-        <button class="btn" onclick="fnc('2')" value="2" >2</button>
-        <button class="btn" onclick="fnc('3')" value="3" >3</button>
-        <button class="btn" onclick="fnc('0')" value="0" >0</button>
-        <button class="btn" onclick="fnc('.')" value="." >.</button>
-        <button class="btn" onclick="equal('=')" value="=" id="eq" style="background-color: #1a73e0;" >=</button>
-        
-    </div>
-    <div class="ops">
-        <button class="btn" onclick="fnc('+')" value="+" >+</button><br>
-        <button class="btn" onclick="fnc('-')" value="-" >-</button><br>
-        <button class="btn" onclick="fnc('*')" value="*" >*</button><br>
-        <button class="btn" onclick="fnc('/')" value="/" >/</button><br>
-    </div>
-    </div>
+    <body>
+        <div class="calculator">
+        <div class="heading" display: >
+            <span>
+                <i class="fas fa-calculator"></i>
+                <i class="fas fa-calculator"></i>
+                <i class="fas fa-calculator"></i>
+            </span>
+            <span>
+                <label>
+                    <input type="checkbox" name="theme">
+                    <span class="btn"></span>
+                    <i class="fas fa-cloud-moon"></i>
+                </label>
+            </span>
+            <span>
+                 <label>
+                    <input type="checkbox" onclick="openTab('b1')">
+                    <span class="btn"></span>
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </label>
+            </span>
+        </div>
+        <div class="display">
+            <button onclick="cls()" id="clr">c</button>
+        <span>
+            <input type="text" id="myText" style="border: none;">
+        </span>
+        </div>
+        <div class="button">
+        <div class="numip">
+            <button class="btn" onclick="fnc('7')" value="7" >7</button>
+            <button class="btn" onclick="fnc('8')" value="8" >8</button>
+            <button class="btn" onclick="fnc('9')" value="9" >9</button>
+            <button class="btn" onclick="fnc('4')" value="4" >4</button>
+            <button class="btn" onclick="fnc('5')" value="5" >5</button>
+            <button class="btn" onclick="fnc('6')" value="6" >6</button>
+            <button class="btn" onclick="fnc('1')" value="1" >1</button>
+            <button class="btn" onclick="fnc('2')" value="2" >2</button>
+            <button class="btn" onclick="fnc('3')" value="3" >3</button>
+            <button class="btn" onclick="fnc('0')" value="0" >0</button>
+            <button class="btn" onclick="fnc('.')" value="." >.</button> 
+            <button class="btn" onclick="equal('=')" value="=" id="eq">=</button>
+        </div>
+        <div class="ops">
+            <button class="btn" onclick="fnc('+')" value="+" style="height:112px" >+</button>
+            <button class="btn" onclick="fnc('-')" value="-" style="height:112px" >-</button>
+            <button class="btn" onclick="fnc('*')" value="*" style="height:112px">*</button>
+            <button class="btn" onclick="fnc('/')" value="/" style="height:112px">/</button>
+        </div>
+        <!--expand section-->
+        <div id="b1" class="expand" style="display:none;">
+        <button class="btn" onclick="fnc('(')" value="(" >(</button> 
+        <button class="btn" onclick="fnc(')')" value=")" >)</button> 
+        <button class="btn" onclick="percent('%')" value="%" id="per">%</button>
+        <button class="btn" onclick="root()" value="&#10003" id="root">&#10003</button>
+        </div>
 
 <script src="script.js"></script>
 
